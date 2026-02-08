@@ -1,0 +1,5 @@
+alpha beta gamma
+theta alpha
+beta gamma
+alpha theta theta beta
+gamma alpha gamma

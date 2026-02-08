@@ -1,0 +1,5 @@
+name = input('enter your name: ')
+totalscore = int(input('enter your score in module 1: '))
+totalscore += int(input('enter your score in module 2: '))
+print('Name:', name)
+print('Average score:', totalscore / 2)
