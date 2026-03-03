@@ -22,27 +22,3 @@ def main():
 			comps = quicksort_count(arr)
 			print(f"  {name:16s}: {comps} comparisons")
 		print()
-
-if __name__ == "__main__":
-	main()
-	_qs(0, len(a) - 1)
-	return comps
-
-def main():
-	random.seed(0)
-	for n in (50, 100):
-		arrays = {
-			"already sorted": list(range(n)),
-			"reverse sorted": list(range(n - 1, -1, -1)),
-			"random": list(range(n))
-		}
-		random.shuffle(arrays["random"])
-		print(f"n = {n}")
-		for name, arr in arrays.items():
-			comps = quicksort_count(arr)
-			print(f"  {name:16s}: {comps} comparisons")
-		print()
-
-if __name__ == "__main__":
-	main()
-
