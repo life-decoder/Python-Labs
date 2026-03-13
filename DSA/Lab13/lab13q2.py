@@ -55,7 +55,8 @@ def binary_search_recursive(
 
 def interpolation_search(arr: List[float], target: float) -> int:
     """Interpolation search for uniformly distributed, sorted numeric data."""
-    lo, hi = 0, len(arr) - 1
+    lo = 0
+    hi = len(arr) - 1
     while lo <= hi and arr[lo] <= target <= arr[hi]:
         if lo == hi:
             return lo if arr[lo] == target else -1

@@ -1,3 +1,4 @@
+""" Floor tiling problem: count the number of ways to tile an n x m floor with 1x1 and 1xm tiles. """
 memo = {}
 
 def count(n, m):
