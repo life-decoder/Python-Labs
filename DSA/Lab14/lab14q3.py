@@ -29,7 +29,6 @@ class _Node:
     left: Optional[_Node] = None
     right: Optional[_Node] = None
 
-
 def huffman_codes(freq_map: Dict[str, int]) -> Dict[str, str]:
     """Return a dict mapping each symbol to its Huffman binary code.
 

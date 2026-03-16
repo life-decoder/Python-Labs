@@ -13,7 +13,8 @@ for level in range((max(count)//10 + 1) * 10, 0, -10):
         if c >= level:
             print(str(level).rjust(2, ' '), end='  ')
         elif c > level - 10:
-            print(str(c % 10).rjust(2, ' '), end='  ')
+            # print(str(c % 10).rjust(2, ' '), end='  ')
+            print(str(c).rjust(2, ' '), end='  ')
         else:
             print('  ', end='  ')
     print()
