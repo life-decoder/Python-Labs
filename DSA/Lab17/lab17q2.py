@@ -49,6 +49,62 @@ def dfs(graph: Graph, start: str) -> Tuple[List[str], List[Tuple[str, str]]]:
     return traversal, tree_edges
 
 
+def dfs_2(graph: Graph, start: str) -> Tuple[List[str], List[Tuple[str, str]]]:
+    """Perform a depth-first traversal using an explicit stack.
+
+    Returns:
+        traversal: list of vertices in the order they were first visited
+        tree_edges: list of (parent, child) edges representing the DFS tree
+    """
+
+    visited: set[str] = set()
+    traversal: List[str] = []
+    tree_edges: List[Tuple[str, str]] = []
+
+    def _dfs_from(source: str) -> None:
+        adj_sorted: Dict[str, List[str]] = {
+            u: sorted(graph.neighbors(u)) for u in graph.vertices_list()
+        }
+        neighbor_index: Dict[str, int] = {source: 0}
+        stack: List[str] = [source]
+
+        visited.add(source)
+        traversal.append(source)
+
+        while stack:
+            u = stack[-1]
+            idx = neighbor_index.get(u, 0)
+            neighbors = adj_sorted.get(u, [])
+
+            # find the next unvisited neighbor
+            while idx < len(neighbors) and neighbors[idx] in visited:
+                idx += 1
+
+            if idx < len(neighbors):
+                w = neighbors[idx]
+                neighbor_index[u] = idx + 1
+
+                if w not in visited:
+                    visited.add(w)
+                    traversal.append(w)
+                    tree_edges.append((u, w))
+                    stack.append(w)
+                    neighbor_index[w] = 0
+            else:
+                stack.pop()
+
+    if start not in graph.vertices_list():
+        return traversal, tree_edges
+
+    _dfs_from(start)
+
+    for u in graph.vertices_list():
+        if u not in visited:
+            _dfs_from(u)
+
+    return traversal, tree_edges
+
+
 def bfs(graph: Graph, start: str) -> Tuple[List[str], List[Tuple[str, str]]]:
     """Perform a breadth-first traversal of the graph starting from `start`.
 

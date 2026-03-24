@@ -33,4 +33,6 @@ def quicksort(arr, l=0, r=None):
 
 if __name__ == "__main__":
     nums = [int(n) for n in input("Enter numbers to be sorted separated by space: ").strip().split()]
+    if not nums:
+        nums = [6,8,3,1,5,0,7,9,2,4]
     print("\nSorted:", quicksort(nums))

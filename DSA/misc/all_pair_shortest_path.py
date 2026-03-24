@@ -1,3 +1,4 @@
+""" All pair shortest path """
 def floyd_warshall(graph, num_vertices):
     # Initialize the distance matrix with the input graph values
     # dist[i][j] will be the shortest distance from i to j

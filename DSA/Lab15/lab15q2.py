@@ -12,7 +12,6 @@ from __future__ import annotations
 
 from typing import Iterable, List, Optional, Tuple
 
-
 def greedy_coin_change(denominations: Iterable[int], amount: int) -> Optional[int]:
     """Return the minimum number of coins to make `amount` using a greedy strategy.
 

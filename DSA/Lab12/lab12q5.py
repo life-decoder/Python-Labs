@@ -15,7 +15,6 @@ def insertion_sort(arr, left, right):
             j -= 1
         arr[j + 1] = key
 
-
 def median_of_three(arr, left, right):
     """Use median-of-three to choose a pivot and place it at right-1."""
     mid = (left + right) // 2
@@ -29,7 +28,6 @@ def median_of_three(arr, left, right):
     # place pivot at right-1
     arr[mid], arr[right - 1] = arr[right - 1], arr[mid]
     return arr[right - 1]
-
 
 def improved_quicksort(arr, left=0, right=None):
     """Recursively sort arr using improved quicksort.
@@ -77,4 +75,6 @@ def improved_quicksort(arr, left=0, right=None):
 
 if __name__ == "__main__":
     nums = [int(n) for n in input("Enter numbers to be sorted separated by space: ").split()]
+    if not nums:
+        nums = [5, 1, 8, 4, 2, 9, 7, 3, 6]
     print("\nSorted:", improved_quicksort(nums))

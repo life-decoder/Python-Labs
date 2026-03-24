@@ -34,7 +34,6 @@ class Item:
     weight: float
     value: float
 
-
 def fractional_knapsack(capacity: float, items: List[Item]) -> Tuple[List[float], float, float]:
     """Return (fractions, total_weight, total_value).
 

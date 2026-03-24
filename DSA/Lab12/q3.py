@@ -22,3 +22,6 @@ def main():
 			comps = quicksort_count(arr)
 			print(f"  {name:16s}: {comps} comparisons")
 		print()
+
+if __name__ == "__main__":
+	main()
