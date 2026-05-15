@@ -125,7 +125,8 @@ def q1a():
         maximum, minimum = max_min(arr)
         print(f"Input: {arr}")
         print(f"Output: Maximum = {maximum}, Minimum = {minimum}\n")
-    def q1b():
+
+def q1b():
     def power(base, exp):
         '''Returns base raised to the power of exp'''
         if exp < 0:
@@ -220,6 +221,6 @@ def q1c():
     print()
     
 if __name__ == "__main__":
-    #q1a()
+    q1a()
     #q1b()
-    q1c()
+    #q1c()
